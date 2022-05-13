@@ -18,5 +18,49 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Auth.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Reservation.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Reservation_Airplane.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Seat.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Seat_Airplane.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Auth.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservation.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservation_Airplane.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Seat.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Seat_Airplane.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

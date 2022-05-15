@@ -1,0 +1,27 @@
+#pragma once
+#include <iostream>
+#include "Seat_Airplane.h"
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+class Schedule //비행 스케쥴을 구현한다
+{
+	string date;
+	int time;
+	Seat_Airplane* seats;
+	string departure; //출발 지점
+	string arrival; //도착 지점
+public:
+	Schedule(); //seats에 Seat_Airplane 동적 생성
+	~Schedule(); //Seat_Airplane 동적 배열 메모리 해제
+	void set_date(string);
+	void set_time(int);
+	void set_departure(string);
+	void set_arrival(string);
+	string get_date();
+	int get_time();
+	string get_departure();
+	string get_arrival();
+};

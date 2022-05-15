@@ -1,14 +1,12 @@
 #include <iostream>
-#include "Auth.h"
+#include "Reservation_Airplane.h"
 
 using namespace std;
 
-class Reservation2 {
-	int state = 0;
-	string username; //추후 user 객체 참조하는 것으로 수정
-};
-
 int main() 
 {
+	Reservation_Airplane *airplane_interface = new Reservation_Airplane();
+	airplane_interface->run();
 
+	return 0;
 }

@@ -1,11 +1,10 @@
 #include "Seat.h"
 
-void Seat::set_id_name(string id, string name) {
-	if (id == "" || name == "") {
-		this->id = "";
-		this->name = "";
-	}
+void Seat::set_id(string id) {
 	this->id = id;
+}
+
+void Seat::set_name(string name) {
 	this->name = name;
 }
 

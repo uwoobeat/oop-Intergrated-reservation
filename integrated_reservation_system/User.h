@@ -5,9 +5,8 @@ using namespace std;
 
 class User {
 	string name = "";
-	int gender; //0은 여자, 1은 남자, -1
+	int gender; //0은 여자, 1은 남자
 	int age;
-	//todo : schedule* reserved
 public:
 	bool set_name(string);
 	bool set_gender(int);
@@ -15,5 +14,4 @@ public:
 	string get_name();
 	int get_gender();
 	int get_age();
-	//todo : get_reserved
 };

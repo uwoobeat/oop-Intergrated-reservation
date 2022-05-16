@@ -12,24 +12,9 @@ void Reservation_Airplane::run() {
 	cout << "한성항공 아이디가 있다면 1, 아니라면 0을 눌러주세요." << '\n';
 	cin >> state; //todo : 0,1 외 예외 처리
 	
-	if (state == 0) {
+	if (state == 0)
 		auth.sign_up(users);
-	}
-	/*
-	if (state == 0) {
-		while (1)
-			if (auth->sign_up()) {
-				break;
-			}
-	}
-	while (1) {
-		pair<bool, string> isSignedUp_ID = auth->sign_in();
-		if (isSignedUp_ID.first) {
-			this.id = isSignedUp_ID.second;
-			break;
-		}
-	}
-	*/
+	currentUser = auth.sign_in(users);
 
 	state = 0;
 
@@ -49,7 +34,7 @@ void Reservation_Airplane::run() {
 			show();
 			break;
 		case 4:
-			cout << "긴급탈출 이히히";
+			cout << "프로그램 종료";
 			exit(1);
 		default:
 			cout << "올바르지 않은 입력값입니다.";
@@ -58,12 +43,15 @@ void Reservation_Airplane::run() {
 }
 
 void Reservation_Airplane::book() {
+	cout << "예약을 시작합니다." << '\n';
+	
+	cout << "";
 }
 
 void Reservation_Airplane::show() {
-	cout << "예약을 시작합니다." << '\n';
+	cout << "현재 예약목록을 보여줍니다." << '\n';
 }
 
 void Reservation_Airplane::cancel() {
-
+	cout << "현재 예약을 취소합니다." << '\n';
 }

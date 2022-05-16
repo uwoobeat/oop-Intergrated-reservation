@@ -1,3 +1,4 @@
+#include <utility>
 #include "Auth.h"
 #include "Console.h"
 
@@ -42,23 +43,32 @@ void Auth<User>::sign_up(vector<User>& user_data) {
 }
 
 template <typename User>
-pair<string, typename vector<User>::iterator> Auth<User>::sign_in() {
+pair<string, User&> Auth<User>::sign_in(vector<User>& user_data) {
 	string userID;
 	string userPW;
 
-	/*
-	while (1) {
-		userID = Console::get_auth_id();
-		userPW = Console::get_auth_pw();
+	cout << "로그인을 시작합니다." << '\n';
 
-		auto it = Auth::user_auth_map.find(userID);
+	//Authentication begin
+
+	while (1) {
+		userID = get_auth_id();
+		userPW = get_auth_pw();
+		auto it = user_auth_map.find(userID);
 		if (it != user_auth_map.end()) {
-			cout << "로그인에 성공했습니다." << '\n';
-			return userID;
+			if (it->first == userID && it->second == userPW)
+				break;
 		}
-		else {
-			cout << "존재하지 않는 계정입니다." << '\n';
-		}
+		cout << "입력한 정보가 존재하지 않습니다." << '\n';
 	}
-	*/
+
+	//Authentication end
+	//Authorization begin
+
+	for (const auto& user : user_data) {//range-based loop. 'const auto&' for only read mode
+		if (user.get_id() == userID)
+			return make_pair(userID, user); //아이디와 users에서 해당 아이디의 user 객체 참조자 반환 
+	}
+
+	//Authorization end
 }

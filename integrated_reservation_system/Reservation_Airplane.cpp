@@ -3,14 +3,7 @@
 using namespace std;
 
 //생성자에서 Schedule 객체 동적 생성 후 getter 호출하여 지정해줘야 함
-
-Reservation_Airplane::Reservation_Airplane() {
-	auth = new Auth;
-}
-
-Reservation_Airplane::~Reservation_Airplane() {
-	delete auth;
-}
+//-> 벡터 사용하므로 필요없음
 
 void Reservation_Airplane::run() {
 	cout << "한성항공에 오신 것을 환영합니다." << "\n\n";
@@ -20,18 +13,23 @@ void Reservation_Airplane::run() {
 	cin >> state; //todo : 0,1 외 예외 처리
 	
 	if (state == 0) {
+		auth.sign_up(users);
+	}
+	/*
+	if (state == 0) {
 		while (1)
 			if (auth->sign_up()) {
 				break;
 			}
 	}
 	while (1) {
-		auto isSignedUp_ID = auth->sign_in();
-		if (isSignedUp_Id.first) {
-			id = isSignedUp_ID.second;
+		pair<bool, string> isSignedUp_ID = auth->sign_in();
+		if (isSignedUp_ID.first) {
+			this.id = isSignedUp_ID.second;
 			break;
 		}
 	}
+	*/
 
 	state = 0;
 

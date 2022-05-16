@@ -6,10 +6,11 @@
 
 using namespace std;
 
+template <typename User>
 class Auth
 {
 	static map<string, string> user_auth_map;
 public:
-	bool sign_up();
-	pair<bool, string> sign_in(); //로그인 성공 여부와 아이디 반환
+	void sign_up(vector<User>&); //User의 파생 클래스들을 Template으로 처리
+	pair<string, typename vector<User>::iterator> sign_in();
 };

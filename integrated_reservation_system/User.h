@@ -4,13 +4,16 @@
 using namespace std;
 
 class User {
-	string name = "";
+	string id;
+	string name;
 	int gender; //0은 여자, 1은 남자
 	int age;
 public:
-	bool set_name(string);
-	bool set_gender(int);
-	bool set_age(int);
+	void set_id(string);
+	void set_name(string);
+	void set_gender(int);
+	void set_age(int);
+	string get_id();
 	string get_name();
 	int get_gender();
 	int get_age();

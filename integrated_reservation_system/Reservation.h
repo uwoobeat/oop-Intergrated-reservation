@@ -5,8 +5,6 @@
 #include "Auth.h"
 
 class Reservation {
-	vector<User> users;
-	Auth auth;
 protected:
 	virtual void book() = 0;
 	virtual void show() = 0;

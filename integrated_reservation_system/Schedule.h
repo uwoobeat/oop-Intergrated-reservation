@@ -15,6 +15,7 @@ class Schedule //비행 스케쥴을 구현한다
 	string arrival; //도착 지점
 public:
 	Schedule(); //seats에 Seat_Airplane 동적 생성
+	Schedule(string, int, string, string);
 	~Schedule(); //Seat_Airplane 동적 배열 메모리 해제
 	void set_date(string);
 	void set_time(int);
@@ -22,6 +23,8 @@ public:
 	void set_arrival(string);
 	string get_date();
 	int get_time();
+	Seat_Airplane* get_seat_ptr();
 	string get_departure();
 	string get_arrival();
+	void show();
 };

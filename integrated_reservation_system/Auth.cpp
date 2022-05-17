@@ -1,4 +1,3 @@
-#include <utility>
 #include "Auth.h"
 #include "Console.h"
 
@@ -31,6 +30,7 @@ void Auth<User>::sign_up(vector<User>& user_data) {
 	//Authentication end
 	//Authorization begin
 	
+	user.set_id(Console::get_auth_id());
 	user.set_name(Console::get_user_name());
 	user.set_gender(Console::get_user_gender());
 	user.set_age(Console::get_user_age());
@@ -43,7 +43,7 @@ void Auth<User>::sign_up(vector<User>& user_data) {
 }
 
 template <typename User>
-pair<string, User&> Auth<User>::sign_in(vector<User>& user_data) {
+User& Auth<User>::sign_in(vector<User>& user_data) {
 	string userID;
 	string userPW;
 
@@ -52,8 +52,8 @@ pair<string, User&> Auth<User>::sign_in(vector<User>& user_data) {
 	//Authentication begin
 
 	while (1) {
-		userID = get_auth_id();
-		userPW = get_auth_pw();
+		userID = Console::get_auth_id();
+		userPW = Console::get_auth_pw();
 		auto it = user_auth_map.find(userID);
 		if (it != user_auth_map.end()) {
 			if (it->first == userID && it->second == userPW)
@@ -65,9 +65,9 @@ pair<string, User&> Auth<User>::sign_in(vector<User>& user_data) {
 	//Authentication end
 	//Authorization begin
 
-	for (const auto& user : user_data) {//range-based loop. 'const auto&' for only read mode
+	for (auto& user : user_data) {
 		if (user.get_id() == userID)
-			return make_pair(userID, user); //아이디와 users에서 해당 아이디의 user 객체 참조자 반환 
+			return user; //아이디와 users에서 해당 아이디의 user 객체 참조자 반환 
 	}
 
 	//Authorization end

@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Auth.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="User.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -43,6 +40,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="User_Airplane.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Seat_Restaurant.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="User_Restaurant.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Reservation_Restaurant.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,6 +78,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="User_Airplane.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Seat_Restaurant.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="User_Restaurant.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservation_Restaurant.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

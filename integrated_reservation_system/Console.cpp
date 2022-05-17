@@ -33,16 +33,6 @@ string Console::get_user_name() {
 	}
 }
 
-string Console::get_user_name() {
-	string name;
-	while (1) {
-		cout << "이름을 입력하세요 : ";
-		cin >> name;
-		if (name == "") cout << "올바른 형식의 이름을 입력하세요." << '\n';
-		else return name;
-	}
-}
-
 int Console::get_user_gender() {
 	int gender;
 	while (1) {
@@ -56,7 +46,7 @@ int Console::get_user_gender() {
 int Console::get_user_age() {
 	int age;
 	while (1) {
-		cout << "나이를 입력하세요 : " << '\n';
+		cout << "나이를 입력하세요 : ";
 		cin >> age;
 		if (!(age >= 1 && age <= 150)) cout << "올바른 형식의 나이를 입력하세요." << '\n';
 		else return age;

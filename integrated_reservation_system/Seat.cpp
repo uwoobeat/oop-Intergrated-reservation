@@ -17,6 +17,5 @@ bool Seat::is_reserved() {
 	return (id != "" && name != "");
 }
 
-pair<string, string> Seat::get_id_name() {
-	return make_pair(id, name);
-}
+string Seat::get_name() { return name; }
+string Seat::get_id() { return id; }

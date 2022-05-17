@@ -139,27 +139,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Auth.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="Reservation_Airplane.cpp" />
+    <ClCompile Include="Reservation_Restaurant.cpp" />
     <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="Seat.cpp" />
     <ClCompile Include="Seat_Airplane.cpp" />
+    <ClCompile Include="Seat_Restaurant.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="User_Airplane.cpp" />
+    <ClCompile Include="User_Restaurant.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auth.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="Reservation_Airplane.h" />
+    <ClInclude Include="Reservation_Restaurant.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="Seat.h" />
     <ClInclude Include="Seat_Airplane.h" />
+    <ClInclude Include="Seat_Restaurant.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="User_Airplane.h" />
+    <ClInclude Include="User_Restaurant.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

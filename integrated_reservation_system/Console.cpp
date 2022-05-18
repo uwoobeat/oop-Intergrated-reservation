@@ -1,5 +1,7 @@
 #include "Console.h"
 
+using namespace std;
+
 string Console::get_auth_id() {
 	string id;
 	while (1) {

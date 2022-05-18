@@ -145,6 +145,7 @@
     <ClCompile Include="Reservation_Airplane.cpp" />
     <ClCompile Include="Reservation_Restaurant.cpp" />
     <ClCompile Include="Schedule.cpp" />
+    <ClCompile Include="Schedule_Restaurant.cpp" />
     <ClCompile Include="Seat.cpp" />
     <ClCompile Include="Seat_Airplane.cpp" />
     <ClCompile Include="Seat_Restaurant.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Reservation_Airplane.h" />
     <ClInclude Include="Reservation_Restaurant.h" />
     <ClInclude Include="Schedule.h" />
+    <ClInclude Include="Schedule_Restaurant.h" />
     <ClInclude Include="Seat.h" />
     <ClInclude Include="Seat_Airplane.h" />
     <ClInclude Include="Seat_Restaurant.h" />

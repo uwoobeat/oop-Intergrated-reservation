@@ -23,8 +23,8 @@ public:
 	void set_arrival(string);
 	string get_date();
 	int get_time();
-	Seat_Airplane* get_seat_ptr();
+	Seat_Airplane* get_seat();
 	string get_departure();
 	string get_arrival();
-	void show();
+	void book(string, string, int);
 };

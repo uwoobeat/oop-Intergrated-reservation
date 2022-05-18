@@ -6,8 +6,8 @@ using namespace std;
 
 class Seat
 {
-	string id;
-	string name;
+	string id = "";
+	string name = "";
 public:
 	void set_id(string);
 	void set_name(string);

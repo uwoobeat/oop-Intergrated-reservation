@@ -4,7 +4,7 @@
 class Seat_Airplane : public Seat
 {
 	string type;
-	int price = 0;
+	int price;
 public:
 	void set_type(string);
 	void set_price(int);

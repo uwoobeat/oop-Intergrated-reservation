@@ -14,7 +14,8 @@ class Reservation_Airplane : Reservation
 	int state = -1;
 public:
 	void run();
-	void set_schedules();
+	void make_schedules();
+	void set_schedule();
 	void book();
 	void show();
 	void cancel();

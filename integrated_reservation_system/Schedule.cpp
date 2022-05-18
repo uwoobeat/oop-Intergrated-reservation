@@ -6,20 +6,20 @@ using namespace std;
 
 Schedule::Schedule() {
 	seats = new Seat_Airplane[8];
+
 	for (int i = 0; i < 8; i++) {
 		if (i == 0 || i == 1) {
 			seats[i].set_price(150);
-			seats[i].set_type("business");
+			seats[i].set_type("B");
 		}
 		else {
 			seats[i].set_price(50);
-			seats[i].set_type("economy");
+			seats[i].set_type("E");
 		}
 	}
-	time = 0;
 }
 
-Schedule::Schedule(string date, int time, string departure, string arrvial) : Schedule() {
+Schedule::Schedule(string date, int time, string departure, string arrival) : Schedule() {
 	this->date = date;
 	this->time = time;
 	this->departure = departure;
@@ -27,7 +27,7 @@ Schedule::Schedule(string date, int time, string departure, string arrvial) : Sc
 }
 
 Schedule::~Schedule() {
-	//delete[] seats;
+	delete[] seats;
 }
 
 void Schedule::set_date(string date) {
@@ -50,7 +50,7 @@ void Schedule::set_departure(string departure) {
 			return;
 		}
 	}
-	this->departure = "--";
+	this->departure = "";
 }
 
 void Schedule::set_arrival(string arrival) {
@@ -59,15 +59,11 @@ void Schedule::set_arrival(string arrival) {
 
 string Schedule::get_date() { return date; }
 int Schedule::get_time() { return time; }
-Seat_Airplane* Schedule::get_seat_ptr() { return seats; }
+Seat_Airplane* Schedule::get_seat() { return seats; }
 string Schedule::get_departure() { return departure; }
 string Schedule::get_arrival() { return arrival; }
 
-void Schedule::show() {
-	for (int i = 0; i < 8; i++) {
-		if (seats[i].is_reserved())
-			cout << setw(5) << seats[i].get_name();
-		else
-			cout << setw(5) << "---";
-	}
+void Schedule::book(string id, string name, int seatNum) {
+	seats[seatNum].set_id(id);
+	seats[seatNum].set_name(name);
 }

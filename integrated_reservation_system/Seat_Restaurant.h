@@ -3,7 +3,7 @@
 class Seat_Restaurant : public Seat
 {
 	int size = 0;
-	bool isWalk;
+	bool isWalk = 0;
 public:
 	void set_size(int);
 	void set_isWalk(bool);

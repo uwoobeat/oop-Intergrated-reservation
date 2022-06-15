@@ -4,8 +4,6 @@
 #include <algorithm>
 #include <string>
 
-using namespace std;
-
 class Schedule //비행 스케쥴을 구현한다
 {
 	string date;

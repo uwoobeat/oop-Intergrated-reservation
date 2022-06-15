@@ -6,8 +6,6 @@
 
 using namespace std;
 
-//생성자에서 Schedule 객체 동적 생성 후 getter 호출하여 지정해줘야 함
-//-> 벡터 사용하므로 필요없음
 
 void Reservation_Airplane::run() {
 	cout << "한성항공에 오신 것을 환영합니다." << "\n\n";
@@ -15,7 +13,7 @@ void Reservation_Airplane::run() {
 	make_schedules();
 
 	cout << "한성항공 아이디가 있다면 1, 아니라면 0을 입력하세요. : ";
-	cin >> state; //todo : 0,1 외 예외 처리
+	cin >> state;
 	cout << endl;
 	
 	if (state == 0)
@@ -27,7 +25,7 @@ void Reservation_Airplane::run() {
 	while (1) {
 		switch (state) {
 		case 0:
-			cout << "예약:1, 취소:2, 보기:3, 끝내기:4 >> ";
+			cout << "예약:1, 취소:2, 보기:3, 통계:4, 끝내기:5 >> ";
 			cin >> state;
 			cout << endl;
 			break;
@@ -44,6 +42,10 @@ void Reservation_Airplane::run() {
 			state = 0;
 			break;
 		case 4:
+			show_stat();
+			state = 0;
+			break;
+		case 5:
 			cout << "프로그램 종료";
 			return;
 		default:
@@ -130,6 +132,9 @@ void Reservation_Airplane::set_schedule() {
 		string tmpname = string(currentUser.get_name());
 		currentSchedule.book(tmpid, tmpname, seatNum);
 		currentUser.set_mileage(currentUser.get_mileage() + 100);
+		currentUser.add_reservedCount();
+		if (currentUser.get_gender() == 1) this->maleReservedCount++;
+		else if (currentUser.get_gender() == 0) this->femaleReservedCount++;
 		cout << "성공적으로 예약되었습니다." << "\n\n";
 	}
 }
@@ -154,7 +159,6 @@ void Reservation_Airplane::book() {
 		set_schedule();
 		cout << "도착지 비행편 예약을 시작합니다." << '\n';
 		set_schedule();
-		//console 수정해서 입력 한번만 받고 왕복 예약 처리하도록
 	}
 }
 
@@ -233,4 +237,52 @@ void Reservation_Airplane::cancel() {
 	else {
 		cout << "현재 사용자의 예약 정보가 아니거나, 예약 정보가 존재하지 않는 좌석입니다." << '\n';
 	}
+}
+
+void Reservation_Airplane::show_stat() {
+	string date;
+	int time;
+	string start;
+	string end;
+	Schedule currentSchedule;
+
+	cout << "통계 현황을 보여줍니다." << "\n\n";
+
+	cout << "현재 로그인된 고객의 예약 횟수 : " << currentUser.get_reservedCount() << '\n';
+
+
+	for (auto& user : users) {
+		if (user.get_gender() == 1)
+			maleReservedCount += user.get_reservedCount();
+		else if (user.get_gender() == 0)
+			femaleReservedCount += user.get_reservedCount();
+	}
+
+	cout << "남성 고객들의 예약 횟수 : " << this->maleReservedCount << '\n';
+	cout << "여성 고객들의 예약 횟수 : " << this->femaleReservedCount << '\n';
+
+
+
+	cout << "좌석 별 예약 횟수를 보여줍니다." << "\n";
+	cout << "예약 일자를 선택하세요. (220501 ~ 220507) : ";
+	cin >> date;
+	cout << "예약 시간대을 입력하세요. (오전, 오후, 저녁) : ";
+	cin >> time;
+	cout << "출발 공항(인천,김포,김해,제주,청주)을 입력하세요. : ";
+	cin >> start;
+	cout << "도착 공항(인천,김포,김해,제주,청주)을 입력하세요. : ";
+	cin >> end;
+
+	for (auto& curSc : schedules)
+		if (curSc.get_departure() == start && curSc.get_arrival() == end && curSc.get_date() == date && curSc.get_time() == time)
+			currentSchedule = curSc;
+	
+	auto p = currentSchedule.get_seat();
+
+	cout << date << "일자" << " " << time << "대의 좌석 별 예약 횟수입니다." << "\n\n";
+
+	for (int i = 0; i < 15; i++) {
+		cout << p[i].get_reservedCount() << "  ";
+	}
+	cout << "\n";
 }

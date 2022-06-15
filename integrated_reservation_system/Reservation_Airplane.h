@@ -19,4 +19,6 @@ public:
 	void book();
 	void show();
 	void cancel();
+	void show_stat();
+	vector<User_Airplane>& get_users() { return users };
 };

@@ -1,7 +1,6 @@
 #include "User.h"
 
-/*to-do : setter의 return형을 bool에서 void로 바꾸고,
-콘솔 출력 및 유효성 판단은 book같은 여러 동작 수행하는 메서드에서 절차지향적으로 구현*/
+using namespace std;
 
 void User::set_id(string id) {
 	this->id = id;
@@ -16,6 +15,10 @@ void User::set_gender(int gender) {
 		this->gender = gender;
 	else
 		this->gender = -1;
+}
+
+void User::add_reservedCount() {
+	reservedCount++;
 }
 
 void User::set_age(int age) {
@@ -40,3 +43,5 @@ int User::get_gender() {
 int User::get_age() {
 	return age;
 }
+
+int User::get_reservedCount() { return reservedCount; }

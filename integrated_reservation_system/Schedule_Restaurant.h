@@ -2,8 +2,6 @@
 #include <iostream>
 #include "Seat_Restaurant.h"
 
-using namespace std;
-
 class Schedule_Restaurant
 {
 	string date;
@@ -12,6 +10,7 @@ class Schedule_Restaurant
 public:
 	Schedule_Restaurant();
 	Schedule_Restaurant(string, string);
+	Schedule_Restaurant(const Schedule_Restaurant&);
 	~Schedule_Restaurant();
 	void set_date(string);
 	void set_time(string);

@@ -11,7 +11,7 @@ Schedule_Restaurant::Schedule_Restaurant() {
 		}
 		else if (i == 2 || i == 3) {
 			seats[i].set_size(4);
-			if (i == 3) seats[i].set_isWalk(false);
+			if (i == 2) seats[i].set_isWalk(false);
 			else seats[i].set_isWalk(true);
 		}
 		else if (i == 4 || i == 5) {
@@ -34,9 +34,16 @@ Schedule_Restaurant::Schedule_Restaurant() {
 	*/
 }
 
-Schedule_Restaurant::Schedule_Restaurant(string date, string time) {
+Schedule_Restaurant::Schedule_Restaurant(string date, string time) : Schedule_Restaurant() {
 	this->date = date;
 	this->time = time;
+}
+
+Schedule_Restaurant::Schedule_Restaurant(const Schedule_Restaurant& s) {
+	this->date = s.date;
+	this->time = s.time;
+	this->seats = new Seat_Restaurant[8];
+	for (int i = 0; i < 8; i++) seats[i] = s.seats[i];
 }
 
 Schedule_Restaurant::~Schedule_Restaurant() {
@@ -61,4 +68,5 @@ Seat_Restaurant* Schedule_Restaurant::get_seat() { return seats; }
 void Schedule_Restaurant::book(string id, string name, int seatNum) {
 	seats[seatNum].set_id(id);
 	seats[seatNum].set_name(name);
+	seats[seatNum].add_reservedCount();
 }

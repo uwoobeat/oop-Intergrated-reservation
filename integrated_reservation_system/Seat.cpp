@@ -13,9 +13,14 @@ void Seat::cancel() {
 	this->name = "";
 }
 
+void Seat::add_reservedCount() {
+	reservedCount++;
+}
+
 bool Seat::is_reserved() {
 	return (id != "" && name != "");
 }
 
 string Seat::get_name() { return name; }
 string Seat::get_id() { return id; }
+int Seat::get_reservedCount() { return reservedCount; }

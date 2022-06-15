@@ -66,4 +66,5 @@ string Schedule::get_arrival() { return arrival; }
 void Schedule::book(string id, string name, int seatNum) {
 	seats[seatNum].set_id(id);
 	seats[seatNum].set_name(name);
+	seats[seatNum].add_reservedCount();
 }

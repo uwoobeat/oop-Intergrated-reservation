@@ -82,9 +82,10 @@ User& Auth<User>::sign_in(vector<User>& user_data) {
 	//Authorization begin
 
 	for (auto& user : user_data) {
-		if (user.get_id() == userID)
+		if (user.get_id() == userID) {
 			cout << "로그인을 성공적으로 완료하였습니다." << '\n' << '\n';
 			return user; //아이디와 users에서 해당 아이디의 user 객체 반환
+		}
 	}
 
 	//Authorization end

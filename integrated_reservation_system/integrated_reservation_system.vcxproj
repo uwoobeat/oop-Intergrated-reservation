@@ -144,13 +144,17 @@
     <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="Reservation_Airplane.cpp" />
     <ClCompile Include="Reservation_Restaurant.cpp" />
+    <ClCompile Include="Reservation_Library.cpp" />
     <ClCompile Include="Schedule.cpp" />
+    <ClCompile Include="Schedule_Library.cpp" />
     <ClCompile Include="Schedule_Restaurant.cpp" />
     <ClCompile Include="Seat.cpp" />
     <ClCompile Include="Seat_Airplane.cpp" />
+    <ClCompile Include="Seat_Library.cpp" />
     <ClCompile Include="Seat_Restaurant.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="User_Airplane.cpp" />
+    <ClCompile Include="User_Library.cpp" />
     <ClCompile Include="User_Restaurant.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,13 +163,17 @@
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="Reservation_Airplane.h" />
     <ClInclude Include="Reservation_Restaurant.h" />
+    <ClInclude Include="Reservation_Library.h" />
     <ClInclude Include="Schedule.h" />
+    <ClInclude Include="Schedule_Library.h" />
     <ClInclude Include="Schedule_Restaurant.h" />
     <ClInclude Include="Seat.h" />
     <ClInclude Include="Seat_Airplane.h" />
+    <ClInclude Include="Seat_Library.h" />
     <ClInclude Include="Seat_Restaurant.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="User_Airplane.h" />
+    <ClInclude Include="User_Library.h" />
     <ClInclude Include="User_Restaurant.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

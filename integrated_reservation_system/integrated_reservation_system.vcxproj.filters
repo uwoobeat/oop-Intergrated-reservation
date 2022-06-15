@@ -54,6 +54,18 @@
     <ClCompile Include="Schedule_Restaurant.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Reservation_Library.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="User_Library.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Schedule_Library.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Seat_Library.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auth.h">
@@ -93,6 +105,18 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Schedule_Restaurant.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservation_Library.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="User_Library.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Schedule_Library.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Seat_Library.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
